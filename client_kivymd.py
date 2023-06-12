@@ -24,11 +24,12 @@ BoxLayout:
 
     BoxLayout:
         size_hint: None, None
-        size: "48dp", "48dp"
+        size: "64dp", "64dp"
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         MDIconButton:
             icon: "microphone"
             on_touch_down: app.on_button_down()
+            md_bg_color: "#00FF00"
 '''
 
 
@@ -60,6 +61,7 @@ class MyApp(MDApp):
         self.root.ids.info.text = self.data_rp
 
     def build(self):
+        self.title = 'Voice Control System'
         return Builder.load_string(KV)
 
     def update_data(self):
